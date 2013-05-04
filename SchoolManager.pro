@@ -21,3 +21,6 @@ HEADERS  += \
     schoolmanaging.h
 
 FORMS    +=
+
+OTHER_FILES += \
+    README.md
