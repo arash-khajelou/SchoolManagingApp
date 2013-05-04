@@ -35,8 +35,9 @@ void EnterForm::clickedLogIn() {
 }
 bool EnterForm::isValid(QString user, QString pass)
 {
-  //if (){
+  if (true){
   return true ;
-  //}
-  return false ;
+  }
+  else
+    return false ;
 }
