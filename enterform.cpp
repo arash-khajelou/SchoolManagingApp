@@ -4,7 +4,8 @@
 
 EnterForm::EnterForm(QWidget* parent): QMainWindow(parent)
 {
-  this->setGeometry(500 , 350 , 300 ,150 );
+    this->setGeometry(500 , 350 , 300 ,150 );
+    this->setWindowTitle("login");
 
   userName = new QLineEdit (this);
   userName->setGeometry(50 , 20 , 200 , 30);
@@ -31,6 +32,8 @@ void EnterForm::clickedLogIn() {
   if (isValid(userName->text() , passWord->text())){
     qDebug()<<"we can open new page with username :" << userName->text()
     <<" and passWord :" << passWord->text();
+    //reopen the next window
+    this->close();
   }
 }
 bool EnterForm::isValid(QString user, QString pass)
