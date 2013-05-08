@@ -26,7 +26,6 @@ private :
   QLineEdit * userName ;
   QLineEdit * passWord ;
   QPushButton * logIn ;
-
 };
 
 #endif // ENTERFORM_H

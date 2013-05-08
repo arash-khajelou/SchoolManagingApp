@@ -16,7 +16,6 @@ TEMPLATE = app
 SOURCES += main.cpp\
     enterform.cpp \
     schoolmanaging.cpp \
-    dbmanager.cpp \
     human.cpp \
     student.cpp \
     stclass.cpp
@@ -24,7 +23,6 @@ SOURCES += main.cpp\
 HEADERS  += \
     enterform.h \
     schoolmanaging.h \
-    dbmanager.h \
     human.h \
     student.h \
     stclass.h

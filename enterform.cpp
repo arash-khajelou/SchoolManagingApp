@@ -1,6 +1,12 @@
 #include "enterform.h"
 
 
+#include <QCryptographicHash>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSql>
+
+
 
 EnterForm::EnterForm(QWidget* parent): QMainWindow(parent)
 {
@@ -32,15 +38,29 @@ void EnterForm::clickedLogIn() {
   if (isValid(userName->text() , passWord->text())){
     qDebug()<<"we can open new page with username :" << userName->text()
     <<" and passWord :" << passWord->text();
-    //reopen the next window
     this->close();
+    //reopen the next window
   }
 }
 bool EnterForm::isValid(QString user, QString pass)
 {
-  if (true){
-  return true ;
-  }
-  else
+    QString hashedPass = QString(QCryptographicHash::hash((pass.toStdString().c_str()),QCryptographicHash::Md5).toHex());
+    QSqlDatabase database = QSqlDatabase::addDatabase ("QMYSQL3");
+    database.setConnectOptions();
+    database.setHostName("localhost") ;
+    database.setDatabaseName("school");
+    database.setUserName("root");
+    database.setPassword("mysql123");
+
+    if (database.open()){
+        QSqlQuery query ;
+        query.exec("select password from clerk where user_name = '" + user + "'");
+        while(query.next())
+            if (query.value(0) == hashedPass)
+                return true ;
+        return false ;
+    }
+    else
+        qDebug() << "WTF !";
     return false ;
 }
