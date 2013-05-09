@@ -1,8 +1,6 @@
 #include "schoolmanaging.h"
 
-#include <QString>
-
-#include <QDebug>
+#include "dbmanager.h"
 
 int main(int argc, char *argv[])
 {

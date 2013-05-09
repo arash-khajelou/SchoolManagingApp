@@ -12,6 +12,8 @@ class STClass
 public:
     STClass();
     QVector <Student> getStudentList () ;
+
+    void setStudentList (QVector <Student>);
 };
 
 #endif // STCLASS_H

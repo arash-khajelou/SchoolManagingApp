@@ -16,16 +16,20 @@ TEMPLATE = app
 SOURCES += main.cpp\
     enterform.cpp \
     schoolmanaging.cpp \
-    human.cpp \
     student.cpp \
-    stclass.cpp
+    stclass.cpp \
+    dbmanager.cpp \
+    rootmenu.cpp \
+    managermenu.cpp
 
 HEADERS  += \
     enterform.h \
     schoolmanaging.h \
-    human.h \
     student.h \
-    stclass.h
+    stclass.h \
+    dbmanager.h \
+    rootmenu.h \
+    managermenu.h
 
 FORMS    +=
 

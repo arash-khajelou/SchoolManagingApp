@@ -1,15 +1,28 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-#include "human.h"
+#include <QString>
 
-class Student : public Human
-{
-    int grade ;
+class Student {
+    int     grade   ;
+    QString name    ;
+    QString family  ;
+    int     classID ;
+    int     id      ;
 public:
     Student();
-    int getGrade () ;
-    void setGrade (int grade );
+
+    int     getGrade   () ;
+    QString getName    () ;
+    QString getFamily  () ;
+    int     getClassID () ;
+    int     getID      () ;
+
+    void setGrade  (int grade );
+    void setName   (QString   );
+    void setFamily (QString   );
+    void setClassID(int       );
+    void setID     (int       );
 };
 
 #endif // STUDENT_H
