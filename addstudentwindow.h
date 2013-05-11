@@ -16,12 +16,15 @@ Q_OBJECT
 public:
     AddStudentWindow(QMainWindow * parent = 0 );
 private slots:
+    void onConfirmClicked ();
 private :
     QLineEdit * name ;
     QLineEdit * family ;
+    QLineEdit * classID ;
 
     QLabel * nameLabel ;
     QLabel * familyLabel ;
+    QLabel * classIDLabel ;
 
     QPushButton * confirm ;
 };
