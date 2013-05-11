@@ -9,6 +9,11 @@
 #include <QDebug>
 
 #include "adduserwindow.h"
+#include "addstudentwindow.h"
+#include "adddelaywindow.h"
+#include "showresultwindow.h"
+#include "manageclasswindow.h"
+#include "setdisiplinewindow.h"
 
 class RootMenu : public QWidget {
 
@@ -18,7 +23,10 @@ public :
     RootMenu(QWidget * parent = 0);
 private slots :
     void onManageClassClicked () ;
-
+    void onSetDisiplineClicked () ;
+    void onAddDelayClicked () ;
+    void onShowResultClicked () ;
+    void onAddStudentClicked () ;
     void onAddUserClicked () ;
 private :
     QPushButton* manageClass       ;
@@ -28,7 +36,13 @@ private :
     QPushButton* addStudent        ;
     QPushButton* addUser           ;
 
-    AddUserWindow * addUserWindow  ;
+    AddUserWindow      *addUserWindow     ;
+    AddStudentWindow   *addStudentWindow  ;
+    AddDelayWindow     *addDelayWindow    ;
+    ShowResultWindow   *showResultWindow  ;
+    SetDisiplineWindow *setDisiplineWindow;
+    ManageClassWindow  *manageClassWindow ;
+
 };
 
 #endif // ROOTMENU_H

@@ -12,15 +12,19 @@ ManagerMenu::ManagerMenu(QWidget * parent) : QWidget(parent)
 
     setDisiplineGrade = new QPushButton("Set disipline grade", this);
     setDisiplineGrade->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    connect (setDisiplineGrade , SIGNAL (clicked ()) , this , SLOT (onSetDisiplineClicked()));
 
     addDelay = new QPushButton("Add delay", this);
     addDelay->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    connect (addDelay , SIGNAL (clicked ()) , this , SLOT (onAddDelayClicked()));
 
     showResult = new QPushButton("Show student result", this);
     showResult->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    connect (showResult , SIGNAL (clicked()) , this , SLOT (onShowResultClicked()));
 
     addStudent = new QPushButton("Add new student", this);
     addStudent->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    connect (addStudent , SIGNAL (clicked()) , this , SLOT (onAddStudentClicked()));
 
     vbox->addWidget(manageClass);
     vbox->addWidget(setDisiplineGrade);
@@ -32,6 +36,22 @@ ManagerMenu::ManagerMenu(QWidget * parent) : QWidget(parent)
 }
 
 void ManagerMenu::onManageClassClicked () {
-    this->close();
-    qDebug()<< "1" << endl ;
+    manageClassWindow = new ManageClassWindow () ;
+    manageClassWindow->show();
+}
+void ManagerMenu::onSetDisiplineClicked(){
+    setDisiplineWindow = new SetDisiplineWindow () ;
+    setDisiplineWindow->show();
+}
+void ManagerMenu::onAddDelayClicked(){
+    addDelayWindow = new AddDelayWindow () ;
+    addDelayWindow->show();
+}
+void ManagerMenu::onShowResultClicked(){
+    showResultWindow = new ShowResultWindow () ;
+    showResultWindow->show();
+}
+void ManagerMenu::onAddStudentClicked(){
+    addStudentWindow = new AddStudentWindow () ;
+    addStudentWindow->show();
 }

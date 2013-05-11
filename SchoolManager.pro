@@ -22,7 +22,14 @@ SOURCES += main.cpp\
     rootmenu.cpp \
     managermenu.cpp \
     teachermenu.cpp \
-    adduserwindow.cpp
+    adduserwindow.cpp \
+    addstudentwindow.cpp \
+    showresultwindow.cpp \
+    adddelaywindow.cpp \
+    manageclasswindow.cpp \
+    setdisiplinewindow.cpp \
+    listofstudentswindow.cpp \
+    setstudentgradewindow.cpp
 
 HEADERS  += \
     enterform.h \
@@ -33,7 +40,14 @@ HEADERS  += \
     rootmenu.h \
     managermenu.h \
     teachermenu.h \
-    adduserwindow.h
+    adduserwindow.h \
+    addstudentwindow.h \
+    showresultwindow.h \
+    adddelaywindow.h \
+    manageclasswindow.h \
+    setdisiplinewindow.h \
+    listofstudentswindow.h \
+    setstudentgradewindow.h
 
 FORMS    +=
 
