@@ -32,13 +32,16 @@ QVector <Student> DBManager::getStudentList(){
         temp.setGrade(query.value(4).toInt());
         res.append(temp);
     }
+    //this->close();
     return res ;
 }
 QSqlQuery DBManager::getQuery (QString command){
     QSqlQuery res ;
     res.exec(command);
+    //this->close();
     return res ;
 }
 void DBManager::executeCommand(QString command){
     database.exec(command);
+    //this->close();
 }

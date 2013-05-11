@@ -20,7 +20,9 @@ SOURCES += main.cpp\
     stclass.cpp \
     dbmanager.cpp \
     rootmenu.cpp \
-    managermenu.cpp
+    managermenu.cpp \
+    teachermenu.cpp \
+    adduserwindow.cpp
 
 HEADERS  += \
     enterform.h \
@@ -29,7 +31,9 @@ HEADERS  += \
     stclass.h \
     dbmanager.h \
     rootmenu.h \
-    managermenu.h
+    managermenu.h \
+    teachermenu.h \
+    adduserwindow.h
 
 FORMS    +=
 

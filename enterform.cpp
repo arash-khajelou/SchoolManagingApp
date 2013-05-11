@@ -5,8 +5,9 @@ EnterForm::EnterForm(QWidget* parent): QMainWindow(parent)
 
     this->dbManager = DBManager();
 
-    rootMenu    = new RootMenu();
+    rootMenu    = new RootMenu()    ;
     managerMenu = new ManagerMenu() ;
+    teacherMenu = new TeacherMenu() ;
 
     this->setGeometry(500 , 350 , 300 ,150 );
     this->setWindowTitle("login");
@@ -16,22 +17,22 @@ EnterForm::EnterForm(QWidget* parent): QMainWindow(parent)
     error->setText("probably you are not one of our clerks ... :D");
 
 
-  userName = new QLineEdit (this);
-  userName->setGeometry(50 , 20 , 200 , 30);
+    userName = new QLineEdit (this);
+    userName->setGeometry(50 , 20 , 200 , 30);
 
-  passWord = new QLineEdit (this);
-  passWord->setEchoMode(QLineEdit::Password);
-  passWord->setGeometry(50 , 55 , 200 , 30);
+    passWord = new QLineEdit (this);
+    passWord->setEchoMode(QLineEdit::Password);
+    passWord->setGeometry(50 , 55 , 200 , 30);
 
-  logIn = new QPushButton ("Login" , this);
-  logIn->setDefault(true);
-  logIn->setGeometry(120 , 90 , 60 , 30);
-  connect(logIn , SIGNAL (clicked()) , this , SLOT (clickedLogIn()));
+    logIn = new QPushButton ("Login" , this);
+    logIn->setDefault(true);
+    logIn->setGeometry(120 , 90 , 60 , 30);
+    connect(logIn , SIGNAL (clicked()) , this , SLOT (clickedLogIn()));
 
-  this->setTabOrder(this , userName);
-  this->setTabOrder(userName , passWord);
-  this->setTabOrder(passWord , logIn);
-  this->setTabOrder(logIn , userName);
+    this->setTabOrder(this , userName);
+    this->setTabOrder(userName , passWord);
+    this->setTabOrder(passWord , logIn);
+    this->setTabOrder(logIn , userName);
 }
 EnterForm::~EnterForm()
 {
@@ -56,9 +57,9 @@ void EnterForm::clickedLogIn() {
     case 2 :
         //teacher user loged in
         qDebug () << "teacher loged in" << endl ;
+        teacherMenu->show();
         break ;
     }
-
   }
   else
     error->show();

@@ -8,6 +8,8 @@
 #include <QString>
 #include <QDebug>
 
+#include "adduserwindow.h"
+
 class RootMenu : public QWidget {
 
 Q_OBJECT
@@ -16,6 +18,8 @@ public :
     RootMenu(QWidget * parent = 0);
 private slots :
     void onManageClassClicked () ;
+
+    void onAddUserClicked () ;
 private :
     QPushButton* manageClass       ;
     QPushButton* setDisiplineGrade ;
@@ -23,6 +27,8 @@ private :
     QPushButton* showResult        ;
     QPushButton* addStudent        ;
     QPushButton* addUser           ;
+
+    AddUserWindow * addUserWindow  ;
 };
 
 #endif // ROOTMENU_H

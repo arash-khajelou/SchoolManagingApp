@@ -24,6 +24,7 @@ RootMenu::RootMenu(QWidget * parent) : QWidget(parent)
 
     addUser = new QPushButton("Add new user" , this);
     addUser->setSizePolicy(QSizePolicy::Expanding , QSizePolicy::Expanding);
+    connect (addUser , SIGNAL (clicked()) , this , SLOT (onAddUserClicked()));
 
     vbox->addWidget(manageClass);
     vbox->addWidget(setDisiplineGrade);
@@ -38,4 +39,9 @@ RootMenu::RootMenu(QWidget * parent) : QWidget(parent)
 void RootMenu::onManageClassClicked () {
     this->close();
     qDebug()<< "1" << endl ;
+}
+
+void RootMenu::onAddUserClicked(){
+    addUserWindow = new AddUserWindow ();
+    addUserWindow->show();
 }

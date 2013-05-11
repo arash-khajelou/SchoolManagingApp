@@ -4,7 +4,6 @@
 #include <QDebug>
 
 #include <QMainWindow>
-#include <QTextEdit>
 #include <QLabel>
 #include <QPushButton>
 #include <QLineEdit>
@@ -16,6 +15,7 @@
 #include "dbmanager.h"
 #include "rootmenu.h"
 #include "managermenu.h"
+#include "teachermenu.h"
 
 class EnterForm : public QMainWindow
 {
@@ -38,7 +38,7 @@ private :
 
   RootMenu * rootMenu ;
   ManagerMenu * managerMenu ;
-  //TeacherMenu * teacherMenu ;
+  TeacherMenu * teacherMenu ;
 };
 
 #endif // ENTERFORM_H
