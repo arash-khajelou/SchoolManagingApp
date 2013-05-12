@@ -30,6 +30,11 @@ QVector <Student> DBManager::getStudentList(){
         temp.setName(query.value(2).toString());
         temp.setFamily(query.value(3).toString());
         temp.setGrade(query.value(4).toInt());
+        QSqlQuery disipQuery ;
+        disipQuery.exec(QString("select grade from disipline_grade where id = %1").arg(
+                       QString::number(temp.getID())));
+        disipQuery.next();
+        temp.setDisipGrade(disipQuery.value(0).toInt());
         res.append(temp);
     }
     //this->close();

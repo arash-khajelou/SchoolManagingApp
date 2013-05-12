@@ -8,6 +8,7 @@
 #include <QString>
 #include <QCryptographicHash>
 #include <QMessageBox>
+#include <QComboBox>
 
 #include "dbmanager.h"
 
@@ -23,7 +24,8 @@ private :
      QLineEdit*   username        ;
      QLineEdit*   password        ;
      QLineEdit*   conPassword     ;
-     QLineEdit*   permission      ;
+     //QLineEdit*   permission      ;
+     QComboBox*   permission      ;
 
      QLabel*      usernameLabel   ;
      QLabel*      passwordLabel   ;

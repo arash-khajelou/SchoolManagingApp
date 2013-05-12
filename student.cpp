@@ -18,6 +18,9 @@ int Student::getClassID(){
 int Student::getID () {
     return this->id ;
 }
+int Student::getDisipGrade(){
+    return this->disipGrade;
+}
 
 void Student::setGrade(int grade){
     this->grade = grade ;
@@ -33,4 +36,7 @@ void Student::setClassID(int classID){
 }
 void Student::setID (int id ) {
     this->id = id ;
+}
+void Student::setDisipGrade(int disipGrade){
+    this->disipGrade = disipGrade ;
 }

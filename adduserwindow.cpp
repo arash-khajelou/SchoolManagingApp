@@ -28,8 +28,14 @@ AddUserWindow::AddUserWindow(QMainWindow * parent) : QMainWindow (parent) {
     this->conPassword->setEchoMode(QLineEdit::Password);
     this->conPassword->setGeometry(150 , 90 , 230 , 30);
 
-    this->permission = new QLineEdit ("0->root ,1->manager ,2->teacher" , this);
+    /*this->permission = new QLineEdit ("0->root ,1->manager ,2->teacher" , this);
+    this->permission->setGeometry(150 , 120 , 230 , 30);*/
+
+    this->permission = new QComboBox (this);
     this->permission->setGeometry(150 , 120 , 230 , 30);
+    this->permission->addItem("0 (root)");
+    this->permission->addItem("1 (manager)");
+    this->permission->addItem("2 (teacher)");
 
     this->confirm = new QPushButton ("Confirm" , this);
     this->confirm->setGeometry(320,150,60,30);
@@ -56,7 +62,7 @@ void AddUserWindow::onConfirmClicked() {
         if (password->text() == conPassword->text()){
             dbManager.executeCommand(
                         QString("insert into clerk values (%1 , '%2' , '%3')").arg(
-                            permission->text() , username->text() ,
+                            QString::number(permission->currentIndex()) , username->text() ,
                             QString(QCryptographicHash::hash((password->text().toStdString().c_str())
                                                              ,QCryptographicHash::Md5).toHex())));
             dbManager.close();
