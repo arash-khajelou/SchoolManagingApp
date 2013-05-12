@@ -49,8 +49,7 @@ HEADERS  += \
     setstudentgradewindow.h \
     result.h
 
-FORMS    += \
-    result.ui
+FORMS    +=
 
 OTHER_FILES += \
     README.md
