@@ -34,9 +34,6 @@ void SetDisiplineWindow::onConfirmClicked(){
     dbManager.executeCommand(QString("update disipline_grade set grade=%1 where id=%2").arg(
                                  grade->text(),
                                  QString::number(studentQuery.value(0).toInt())));
-    qDebug() << QString("update disipline_grade set grade=%1 where id=%2").arg(
-                    grade->text(),
-                    QString::number(studentQuery.value(0).toInt()));
     dbManager.close();
     this->close();
 }

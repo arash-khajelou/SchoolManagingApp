@@ -28,8 +28,8 @@ SOURCES += main.cpp\
     adddelaywindow.cpp \
     manageclasswindow.cpp \
     setdisiplinewindow.cpp \
-    listofstudentswindow.cpp \
-    setstudentgradewindow.cpp
+    setstudentgradewindow.cpp \
+    result.cpp
 
 HEADERS  += \
     enterform.h \
@@ -46,10 +46,11 @@ HEADERS  += \
     adddelaywindow.h \
     manageclasswindow.h \
     setdisiplinewindow.h \
-    listofstudentswindow.h \
-    setstudentgradewindow.h
+    setstudentgradewindow.h \
+    result.h
 
-FORMS    +=
+FORMS    += \
+    result.ui
 
 OTHER_FILES += \
     README.md

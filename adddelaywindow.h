@@ -5,6 +5,11 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QCalendarWidget>
+#include <QComboBox>
+#include <QString>
+#include <QStringList>
+#include <QVector>
+#include <QVBoxLayout>
 
 #include "dbmanager.h"
 
@@ -14,9 +19,13 @@ class AddDelayWindow : public QMainWindow{
 public:
     AddDelayWindow(QMainWindow * parent = 0);
 private slots :
+    void onCalendarClicked () ;
+    void onConfirmClicked  () ;
 private :
-    QCalendarWidget * calender ;
-
+    QCalendarWidget * calendar     ;
+    QComboBox*        students     ;
+    QLineEdit*        selectedDate ;
+    QPushButton*      confirm      ;
 };
 
 #endif // ADDDELAYWINDOW_H
